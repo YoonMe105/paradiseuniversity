@@ -1,0 +1,763 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap');
+
+:root{
+	--primary-color: darkviolet;
+	--secondary-color: darkblue;
+
+	--primary-grad-color: linear-gradient(to left,darkviolet,deepskyblue);
+}
+
+*{
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Source Sans Pro', sans-serif;
+
+	padding: 0;
+	margin: 0;
+}
+
+/*Start Header Section*/
+
+header{
+	height: 80vh;
+	background: var(--primary-grad-color);
+
+	position: relative;
+}
+
+/*start header intro*/
+.headerinfos{
+	background: var(--primary-color);
+	color: #fff;
+
+	padding: 15px 0;
+
+	display: none;
+}
+
+@media(min-width: 1200px){
+	.visible-lgs{
+		display: block;
+	}
+}
+
+.infos{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.headericons a{
+	text-decoration: none;
+	color: #fff;
+	margin: 0 10px;
+}
+/*end header intro*/
+
+/*start navbar*/
+
+nav{
+	z-index: 1;
+}
+
+.menustyles li a{
+	color: #000;
+	font-size: 13px;
+	letter-spacing: 1.5px;
+
+	transition: color .3s;
+}
+
+.menustyles li a:hover{
+	color: var(--primary-color);
+}
+
+.navbuttons{
+	border: 0;
+}
+
+.navbuttons:focus{
+	/*outline: 0;*/
+	box-shadow: none;
+}
+
+.lines1,.lines2,.lines3{
+	width: 17px;
+	height: 2px;
+	margin: 3px;
+}
+
+.crossxs .lines1{
+	transform: rotate(-45deg) translate(-3px,4px);
+}
+
+.crossxs .lines2{
+	opacity: 0;
+}
+
+.crossxs .lines3{
+	transform: rotate(45deg) translate(-3px,-4px);
+}
+/*end navbar*/
+
+
+/*start banner*/
+.banners{
+	width: 90%;
+
+	position: absolute;
+	left: 50%;
+	top: 50%;
+
+	transform: translate(-50%,-50%);
+}
+
+.bannerheaders{
+	font-weight: bold;
+	letter-spacing: 3px;
+	animation: mybannerani 2s;
+}
+
+.bannerparagraphs,.banners-btn{
+	animation: mybannerani;
+	animation-duration: 2s;
+	animation-delay: .5s;
+	animation-fill-mode: backwards;
+}
+
+@keyframes mybannerani{
+	0%{
+		transform: translateY(100px);
+		opacity: 0;
+	}
+	100%{
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+/*end banner*/
+
+.studentgroups{
+	width: 40%;
+
+	position: absolute;
+	left: 0;
+	bottom: 0;
+
+	z-index: 1;
+}
+
+.waves{
+	width: 100%;
+
+	position: absolute;
+	left: 0;
+	bottom: -5px;
+
+	z-index: 2;
+}
+
+/*End Header Section*/
+
+
+/*Start Student Counter Section*/
+.counters{
+	width: 100%;
+	height: 20vh;
+	font-weight: bold;
+	letter-spacing: 2px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.counteritems{
+	width: 25%;
+
+	float: left;
+
+	text-align: center;
+
+	border-right: 1px solid rgba(0,0,0,.2);
+}
+
+.counteritems:last-child{
+	border-right: 0;
+}
+
+.counteritems .fas{
+	background: var(--primary-grad-color);
+	color: transparent;
+	-webkit-background-clip: text;
+}
+
+.counteritems h5{
+	font-size: 15px;
+	font-weight: bold;
+}
+/*End Student Counter Section*/
+
+
+/*Start AboutUs Section*/
+.aboutuss{
+	background: linear-gradient(
+		rgba(0,0,0,.3),
+		rgba(0,0,0,.3)
+	),url(../assets/img/banner/banner4.jpg);
+	background-repeat: no-repeat;
+}
+
+.aboutuss ul li{
+	list-style-type: none;
+	background: var(--secondary-color);
+	margin: 10px 0;
+}
+
+/*End AboutUs Section*/
+
+
+/*Start Faulty Section*/
+.faulties{
+	background: var(--secondary-color);
+}
+
+.flip-cards{
+	width: 300px;
+	height: 300px;
+
+	perspective: 1000px;
+}
+
+.flip-cards-inners{
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	box-shadow: 10px 0 10px rgba(0,0,0,0.5);
+
+	transform-style: preserve-3d;
+
+	transform: scale(0.7);
+
+	transition: transform .5s;
+}
+
+.flip-cards:hover .flip-cards-inners{
+	transform: rotateY(180deg);
+}
+
+.flip-cards-fronts,.flip-cards-backs{
+	width: 100%;
+	height: 100%;
+
+	position: absolute;
+
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.flip-cards-backs{
+	background: steelblue;
+	transform: rotateY(180deg);
+}
+
+.socialicons a{
+	color: #fff;
+	border: 1px solid #fff;
+	padding: 5px;
+	margin: 0 5px;
+}
+
+.socialicons a:hover{
+	background: blue;
+}
+/*End Faulty Section*/
+
+
+/*Start Pricing Section*/
+.pricingboxes{
+	background: #eee;
+	text-align: center;
+
+	transition: transform .3s;
+}
+
+.pricingboxes:hover{
+	transform: translateY(-20px);
+}
+
+.price-headers{
+	background: var(--secondary-color);
+	color: #fff;
+	padding: 5px 0;
+}
+
+.prices{
+	font-size: 3rem;
+	font-weight: bold;
+	background: url(./../assets/img/icon/pricebg.png);
+	background-repeat: no-repeat;
+	background-position: center;
+
+	line-height: 160px;
+}
+
+.price-items li{
+	margin: 10px 0;
+}
+/*End Pricing Section*/
+
+
+/*Start Location Area Section*/
+.libcards{
+	perspective: 1000px;
+
+	position: relative;
+}
+
+.libcontents{
+	width: 0;
+	height: 100%;
+	background: #444;
+	color: #fff;
+
+	position: absolute;
+	left: 0;
+	top: 0;
+
+	transform: rotateY(-90deg);
+	transform-origin: left center;
+
+	transition: all .5s;
+}
+
+.libcards:hover .libcontents{
+	width: 70%;
+	transform: rotateY(0);
+}
+
+.libcontents .details{
+	text-align: center;
+	margin-top: 10px;
+}
+
+.btn-infos{
+	width: 50%;
+	background-color: steelblue;
+	color: #fff;
+	text-align: center;
+	text-decoration: none;
+
+	position: absolute;
+	left: 10px;
+	bottom: 10px;
+}
+
+.btn-infos:hover{
+	background: var(--secondary-color);
+	color: #fff;
+}
+
+@media(max-width: 1000px){
+	.libcards:hover .libcontents{
+		width: 50%;
+	}
+}
+/*End Location Area Section*/
+
+
+/*Start Feature Section*/
+.features{
+	background: var(--secondary-color);
+}
+
+.feas{
+	text-align: center;
+}
+
+.feas img{
+	transform: rotateY(0) scale(0.5);
+
+	transition: transform .5s;
+}
+
+.feas:hover img{
+	transform: rotateY(360deg) scale(1.0);
+}
+
+.feas p{
+	font-size: 12px;
+}
+/*End Feature Section*/
+
+
+/*Start Rating Section*/
+.heading{
+	font-size: 25px;
+	margin-right: 5px;
+}
+
+.fa-star{
+	font-size: 25px;
+}
+
+.fills{
+	color: orange;
+}
+
+.rows{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.lefts{
+	width: 20%;
+	margin-bottom: 5px;
+
+	z-index: 1;
+}
+
+.middles{
+	width: 60%;
+}
+
+.rights{
+	width: 20%;
+	text-align: right;
+}
+
+.bars-container{
+	width: 100%;
+	background: #f1f1f1;
+}
+
+.bars-1{
+	width: 50%;
+	height: 18px;
+	background-color: green;
+}
+
+.bars-2{
+	width: 30%;
+	height: 18px;
+	background: blue;
+}
+
+.bars-3{
+	width: 10%;
+	height: 18px;
+	background: skyblue;
+}
+
+.bars-4{
+	width: 5%;
+	height: 18px;
+	background: orange;
+}
+
+.bars-5{
+	width: 25%;
+	height: 18px;
+	background: red;
+}
+/*End Rating Section*/
+
+
+/*Start Subscribe Section*/
+.subscribes{
+	background: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.2)),url(./../assets/img/etc/student1.png);
+	background-repeat: no-repeat;
+	background-position: 90%;
+}
+
+
+@media(max-width: 992px){
+	.subscribes{
+		background: linear-gradient(rgba(0,0,0,.3),rgba(0,0,0,.2));
+		background-position: 80%;
+	}
+}
+
+@media(max-width: 1200px){
+	.subscribes{
+		background-position: 90%;
+	}
+}
+
+.input-group{
+	margin-bottom: 5px;
+}
+
+.input-group-text{
+	background: royalblue;
+	color: #fff;
+}
+
+.form-control:focus{
+	outline: 0;
+	border: 0;
+	box-shadow: 0;
+}
+
+.squareareas{
+	position: relative;
+	overflow: hidden;
+}
+
+.sqboxes{
+	width: 100%;
+	height: 100%;
+}
+
+.square{
+	width: 70px;
+	height: 70px;
+	background: #f2f2f2;
+
+	position: absolute;
+	left: 0;
+	bottom: -40%;
+
+	animation: mysquareani 3s infinite ease-in-out;
+}
+
+@keyframes mysquareani{
+	0%{
+		bottom: -100px;
+	}
+	100%{
+		bottom: 100%;
+		transform: rotate(180deg);
+		opacity: 0;
+	}
+}
+
+.square:nth-child(1){
+	width: 70px;
+	height: 70px;
+	left: 7%;
+}
+
+.square:nth-child(2){
+	width: 60px;
+	height: 60px;
+	left: 15%;
+
+	animation-delay: 4s;
+}
+
+.square:nth-child(3){
+	width: 82px;
+	height: 82px;
+	left: 45%;
+
+	animation-delay: 8s;
+}
+
+.square:nth-child(4){
+	width: 70px;
+	height: 70px;
+	left: 55%;
+
+	animation-delay: 2s;
+}
+
+.square:nth-child(5){
+	width: 65px;
+	height: 65px;
+	left: 67%;
+
+	animation-delay: 6s;
+}
+
+.square:nth-child(6){
+	width: 55px;
+	height: 55px;
+	left: 27%;
+
+	animation-delay: 3s;
+}
+
+.square:nth-child(7){
+	width: 90px;
+	height: 90px;
+	left: 85%;
+
+	animation-delay: 9s;
+}
+
+.square:nth-child(8){
+	width: 70px;
+	height: 70px;
+	left: 75%;
+
+	animation-delay: 4s;
+}
+
+.square:nth-child(9){
+	width: 45px;
+	height: 45px;
+	left: 10%;
+
+	animation-delay: 1s;
+}
+
+.square:nth-child(10){
+	width: 55px;
+	height: 55px;
+	left: 63%;
+
+	animation-delay: 2.5s;
+}
+/*End Subscribe Section*/
+
+
+/*Start Footer Section*/
+.footerlinks{
+	color: #fff;
+	text-decoration: none;
+	font-size: 12px;
+
+	transition: all .3s;
+}
+
+.footerlinks:hover{
+	color: orange;
+	letter-spacing: 1px;
+	border-bottom: 1px solid orange;
+}
+
+.footersocialicons a{
+	width: 30px;
+	height: 30px;
+	display: inline-block;
+	color: #fff;
+	border: 1px solid #f4f4f4;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 30px;
+
+	margin: 0 2px;
+}
+
+.footersocialicons a:hover{
+	background-color: blue;
+}
+
+.backtotop-btn{
+	background: #333;
+	color: #fff;
+	padding: 10px;
+}
+
+.backtotop-btn:hover{
+	background: #555;
+}
+/*End Footer Section*/
+
+
+/*Start Login Box*/
+.open-btn{
+	width: 30px;
+	height: 30px;
+	border: none;
+	background-color: #555;
+	color: #fff;
+	border-radius: 50%;
+
+	position: fixed;
+	right: 15px;
+	bottom: 15px;
+
+	opacity: 0.8;
+
+	z-index: 10;
+}
+
+.open-btn:hover{
+	opacity: 1;
+}
+
+.form-popup{
+	background-color: #fff;
+	border: 3px solid #f1f1f1;
+
+	position: fixed;
+	right: 15px;
+	bottom: 50px;
+
+	z-index: 100;
+
+	display: none;
+}
+
+.form-container{
+	width: 300px;
+	padding: 10px;
+}
+
+.form-group input[type=email],.form-group input[type=password]{
+	width: 100%;
+	background-color: #f1f1f1;
+	border: none;
+
+	padding: 15px;
+	margin: 10px 0;
+}
+
+.form-group input[type=email]:focus,.form-group input[type=password]:focus{
+	background-color: #ddd;
+	outline: none;
+}
+/*End Login Box*/
+
+
+/*Start Stick Note*/
+.sticknotes a{
+	width: 100px;
+	background-color: steelblue;
+	color: #fff;
+	text-decoration: none;
+	font-size: 20px;
+	border-radius: 0 5px 5px 0;
+
+	padding: 15px;
+
+	position: fixed;
+	left: -80px;
+
+	z-index: 100;
+
+	transition: left .3s;
+}
+
+.sticknotes a:hover{
+	left: 0;
+}
+
+.sticknotes .about{
+	top: 200px;
+	background-color: green;
+}
+
+.sticknotes .cost{
+	top: 260px;
+	background-color: skyblue;
+}
+
+.sticknotes .faq{
+	top: 320px;
+	background-color: tomato;
+}
+
+.sticknotes .contact{
+	top: 380px;
+	background-color: grey;
+}
+/*End Stick Note*/
